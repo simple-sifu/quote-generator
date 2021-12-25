@@ -11,6 +11,12 @@ function newQuote() {
   // Pick a random quotes from apiQuotes array
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)]
   authorText.textContent = !quote.author ? 'Unknown' : quote.author;
+  // Check quote length to determine styling
+  if (quote.text.length > 50){
+    quoteText.classList.add('long-quote');
+  } else {
+    quoteText.classList.remove('long-quote');
+  }
   quoteText.textContent = quote.text;
 }
 
