@@ -10,7 +10,7 @@ let apiQuotes = [];
 function newQuote() {
   // Pick a random quotes from apiQuotes array
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)]
-  authorText.textContent = quote.author;
+  authorText.textContent = !quote.author ? 'Unknown' : quote.author;
   quoteText.textContent = quote.text;
 }
 
