@@ -22,6 +22,7 @@ function complete() {
 
 // New Quote
 function newQuote() {
+  loading();
   // Pick a random quotes from apiQuotes array
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)]
   authorText.textContent = !quote.author ? 'Unknown' : quote.author;
@@ -32,6 +33,7 @@ function newQuote() {
     quoteText.classList.remove('long-quote');
   }
   quoteText.textContent = quote.text;
+  complete();
 }
 
 async function getQuotes() {
@@ -56,5 +58,4 @@ twitterBtn.addEventListener('click', tweetQuote);
 
 
 // On Load
-// getQuotes();
-loading();
+getQuotes();
